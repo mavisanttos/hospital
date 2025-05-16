@@ -1,4 +1,4 @@
-// Classe Fila
+// classe fila
 class Fila {
   constructor() {
     this.itens = [];
@@ -29,7 +29,7 @@ class Fila {
   }
 }
 
-// Classe Pilha
+// classe pilha
 class Pilha {
   constructor() {
     this.itens = [];
@@ -64,31 +64,31 @@ class Pilha {
   }
 }
 
-// Inicializando fila de atendimento e pilha de prontuários
+// nova fila e nova pilha
 const filaAtendimento = new Fila();
 const pilhaProntuarios = new Pilha();
 
-// Adicionando 5 pacientes à fila
+// 5 pacientes na fila
 const pacientes = ["Duda", "Mavi", "Karol", "Ana", "Paulo"];
 pacientes.forEach((nome) => filaAtendimento.enfileirar(nome));
 
 console.log("Fila inicial de pacientes:");
 console.log(filaAtendimento.imprimir());
 
-// Mostrando quem será o próximo a ser atendido
+// mostra o próximo paciente que será atendido
 console.log("Próximo a ser atendido:", filaAtendimento.espiar());
 
-// Simulando atendimento de dois pacientes
+// atendimento de dois pacientes
 for (let i = 0; i < 2; i++) {
   const atendido = filaAtendimento.desenfileirar();
   console.log(`${atendido} foi atendido.`);
   pilhaProntuarios.empilhar(atendido);
 }
 
-// Mostrando fila restante
+// pacientes restantes
 console.log("Fila restante:");
 console.log(filaAtendimento.imprimir());
 
-// Mostrando pilha de prontuários
+// pilha de prontuários
 console.log("Pilha de prontuários:");
 console.log(pilhaProntuarios.imprimir());
